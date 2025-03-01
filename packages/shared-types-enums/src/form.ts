@@ -255,6 +255,7 @@ export interface FormModel {
   integrations: {
     googleanalytics: string
     facebookpixel: string
+    microsoftclarity: string;
   }
   updatedAt: number
 }

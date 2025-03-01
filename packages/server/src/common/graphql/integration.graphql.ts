@@ -51,6 +51,10 @@ export class UpdateIntegrationInput extends ThirdPartyInput {
   @IsOptional()
   facebookpixel?: GoogleAnalyticsSettingsInput
 
+  @Field(type => GoogleAnalyticsSettingsInput, { nullable: true })
+  @IsOptional()
+  microsoftclarity?: GoogleAnalyticsSettingsInput
+
   @Field(type => WebhookSettingsInput, { nullable: true })
   @IsOptional()
   webhook?: WebhookSettingsInput

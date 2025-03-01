@@ -26,7 +26,7 @@ export class FormDetailResolver {
     const integrations: Record<string, any> = {}
 
     if (form.settings.active) {
-      const apps = await this.appService.findAllByUniqueIds(['googleanalytics', 'facebookpixel'])
+      const apps = await this.appService.findAllByUniqueIds(['googleanalytics', 'facebookpixel', 'microsoftclarity'])
       const result = await this.integrationService.findAllInFormByApps(
         input.formId,
         apps.map(app => app.id)

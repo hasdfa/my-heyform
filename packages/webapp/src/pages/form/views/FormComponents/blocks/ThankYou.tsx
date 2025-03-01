@@ -14,14 +14,19 @@ export const ThankYou: FC<BlockProps> = ({ field, className, children, ...restPr
 
   useEffect(() => {
     let redirectUrl = field.properties?.redirectUrl
+    // @ts-ignore
+    const formOpenToken = window.__heyform_form_open_token__ || ''
 
     if (state.customUrlRedirects && field.properties?.redirectOnCompletion && redirectUrl) {
       if (!isURL(redirectUrl)) {
         redirectUrl = 'https://' + redirectUrl
       }
 
+      redirectUrl = redirectUrl.replace('{{form_open_token}}', encodeURIComponent(formOpenToken || ''))
+      redirectUrl = redirectUrl.replace('{{form_id}}', encodeURIComponent(state.formId || ''))
       window.location.href = redirectUrl
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

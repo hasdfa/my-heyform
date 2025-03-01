@@ -40,6 +40,8 @@ const Render = () => {
 
   async function openForm() {
     openTokenRef.current = await FormService.openForm(formId)
+    // @ts-ignore
+    window.__heyform_form_open_token__ = openTokenRef.current
   }
 
   function handlePasswordFinish(passwordToken: string) {
@@ -148,7 +150,7 @@ const Render = () => {
             stripeApiKey={(form as any).stripe?.publishableKey}
             stripeAccountId={(form as any).stripe?.accountId}
             autoSave={!(form.settings?.enableTimeLimit && helper.isValid(form.settings?.timeLimit))}
-            alwaysShowNextButton={true}
+            alwaysShowNextButton={false || form?.settings?.alwaysShowNextButton}
             customUrlRedirects={true}
             onSubmit={handleSubmit}
           />

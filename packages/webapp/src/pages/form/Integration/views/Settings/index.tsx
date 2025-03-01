@@ -127,6 +127,32 @@ export const Settings: FC<SettingsProps> = observer(({ appId, visible, onVisible
                 />
               )
 
+            case 'microsoftclarity':
+              return (
+                <CommonSettings
+                  app={app}
+                  onRequest={handleRequest}
+                  onFinish={handleClose}
+                  options={[
+                    {
+                      name: 'trackingCode',
+                      label: 'Project ID',
+                      placeholder: 'e.g. abcde5fjhi',
+                      description: (
+                        <>
+                          To activate the Clarity project, Clarity needs to be initialized with the Clarity project ID. To get the Clarity project ID, go to your <a target="_blank" href="https://clarity.microsoft.com/projects?utm_source=heyform">Clarity project</a> {'>'} Settings {'>'} Overview
+                        </>
+                      ),
+                      rules: [
+                        {
+                          required: true
+                        }
+                      ]
+                    }
+                  ]}
+                />
+              )
+
             case 'email':
               return (
                 <CommonSettings

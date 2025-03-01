@@ -30,6 +30,16 @@
 		"status": 1
 	},
 	{
+		"uniqueId": "microsoftclarity",
+		"category": "Analytics",
+		"name": "Microsoft Clarity",
+		"description": "Clarity is a free user behavior analytics tool that helps you understand how users are interacting with your website through session replays and heatmaps.",
+		"avatar": "/static/microsoftclarity.png",
+		"homepage": "https://clarity.microsoft.com",
+		"helpLinkUrl": null,
+		"status": 1
+	},
+	{
 		"uniqueId": "email",
 		"category": "Reporting",
 		"name": "Email Notification",
